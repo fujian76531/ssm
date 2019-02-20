@@ -31,10 +31,31 @@
             <input type="submit" value="Post查询报表">
         </form>
     </div>
+
+    <div>
+        <form id="zc" action="/user/login" method="post">
+            用户名：<input type="text" required id="name" name="name"><br>
+            密码：<input type="password" required id="pw" name="pw"><br>
+            <input type="submit" value="登录">
+            <input type="button" value="注册" onclick="location.href='/user/register'">
+        </form>
+    </div>
 </body>
 <script>
     function Search() {
         window.open("/message/detail/data="+document.getElementById("userName").value);
+    }
+
+    if ('${status}' != '') {
+        if ('${status}' == 0) {
+            alert('登录成功,即将跳转至用户详情页！')
+            location.href = '/user/userInfo'
+        }else if ('${status}' == 1) {
+            alert('该账户不存在！');
+        }
+        else if ('${status}' == 2) {
+            alert('密码错误！')
+        }
     }
 </script>
 </html>

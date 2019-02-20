@@ -12,7 +12,8 @@ import java.util.List;
  * @date ：Created in 2019/2/19
  * @description：
  */
-public interface UserInfoService {
-    int insert(Userinfo userinfo);
-    ArrayList<Userinfo> selectSelective(Userinfo user);
+public interface UserinfoService {
+    int insert(Userinfo record);
+
+    ArrayList<Userinfo> selectSelective(Userinfo record);
     }
